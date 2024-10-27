@@ -1,16 +1,24 @@
 plugins {
     id 'java'
+    id 'war'
 }
 
 group = 'ru.clevertec'
 version = '1.0-SNAPSHOT'
+
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    annotationProcessor 'org.projectlombok:lombok:1.18.34'
+    compileOnly 'org.projectlombok:lombok:1.18.34'
+
     compileOnly 'javax.servlet:javax.servlet-api:4.0.1'
+    compileOnly 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+    implementation 'jstl:jstl:1.2'
+
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
